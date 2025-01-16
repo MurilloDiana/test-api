@@ -21,20 +21,20 @@ jobs:
     - name: Setup Java
       uses: actions/setup-java@v3
       with:
-        java-version: '17' # Cambia si necesitas Java 8 o superior
+        java-version: '11'
         distribution: 'temurin'
 
-    # Configurar Maven
-    - name: Setup Maven
-      uses: actions/setup-node@v3
-      with:
-        node-version: '16' 
+    # Verificar estructura del proyecto
+    - name: Ensure pom.xml exists
+      run: |
+        if [ ! -f pom.xml ]; then
+          echo "Error: pom.xml no encontrado en el directorio raíz." >&2
+          exit 1
+        fi
 
-    # Instalar dependencias con Maven
-    - name: Install dependencies
-      run: mvn clean install
+    # Instalar dependencias y ejecutar pruebas
+    - name: Build and Test with Maven
+      run: |
+        mvn clean install
 
-    # Ejecutar pruebas
-    - name: Run API Tests
-      run: mvn test
-
+     
