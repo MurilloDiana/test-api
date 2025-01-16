@@ -1,0 +1,19 @@
+-------------------------------------------------------------------------------
+Test set: TestRunner
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 0.92 s <<< FAILURE! - in TestRunner
+features/api-tests.[1:7] List users  Time elapsed: 0.102 s  <<< ERROR!
+java.lang.NoSuchMethodError: 'void sun.misc.Unsafe.ensureClassInitialized(java.lang.Class)'
+
+features/api-tests.[2:14] Create user  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.graalvm.polyglot.Engine$ImplHolder
+Caused by: java.lang.ExceptionInInitializerError: Exception java.lang.NoSuchMethodError: 'void sun.misc.Unsafe.ensureClassInitialized(java.lang.Class)' [in thread "main"]
+
+features/api-tests.[3:22] Update user  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.graalvm.polyglot.Engine$ImplHolder
+Caused by: java.lang.ExceptionInInitializerError: Exception java.lang.NoSuchMethodError: 'void sun.misc.Unsafe.ensureClassInitialized(java.lang.Class)' [in thread "main"]
+
+features/api-tests.[4:30] Delete user  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.graalvm.polyglot.Engine$ImplHolder
+Caused by: java.lang.ExceptionInInitializerError: Exception java.lang.NoSuchMethodError: 'void sun.misc.Unsafe.ensureClassInitialized(java.lang.Class)' [in thread "main"]
+
